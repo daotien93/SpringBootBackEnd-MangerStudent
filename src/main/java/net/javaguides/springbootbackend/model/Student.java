@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "employees")
-public class Employee {
+@Table(name = "students")
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -27,14 +27,13 @@ public class Employee {
     @Column(name="gpa")
     private float gpa;
 
-    public Employee( String fullName, float pointNumberOne, float pointNumberTwo, float pointNumberThree, float gpa) {
+    public Student(String fullName, float pointNumberOne, float pointNumberTwo, float pointNumberThree) {
         this.fullName = fullName;
         this.pointNumberOne = pointNumberOne;
         this.pointNumberTwo = pointNumberTwo;
         this.pointNumberThree = pointNumberThree;
-        this.gpa = gpa;
     }
-    public Employee() {
+    public Student() {
 
     }
     public long getId() {
@@ -75,13 +74,5 @@ public class Employee {
 
     public void setPointNumberThree(float pointNumberThree) {
         this.pointNumberThree = pointNumberThree;
-    }
-
-    public float getGpa() {
-        return gpa;
-    }
-
-    public void setGpa(float gpa) {
-        this.gpa = gpa;
     }
 }
