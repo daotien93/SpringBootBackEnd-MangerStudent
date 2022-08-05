@@ -36,7 +36,7 @@ public List<Student> getAllStudent(){
 
 // Update student rest api
 @PutMapping("/students/{id}")
-public ResponseEntity<Student> updateEmployee(@PathVariable Long id, @RequestBody Student studentDetails){
+public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student studentDetails){
     Student student = studentRepository.findById(id)
             .orElseThrow(() -> new ResourceAccessException("Student not exits with id "    + id ));
 
